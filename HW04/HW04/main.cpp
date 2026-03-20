@@ -17,7 +17,9 @@ int main()
         cout << "2. 모든 레시피 출력" << endl;
         cout << "3. 포션 이름으로 검색" << endl;
         cout << "4. 포션 재료로 검색" << endl;
-        cout << "5. 종료" << endl;
+        cout << "5. 포션 지급" << endl;
+        cout << "6. 포션 반납" << endl;
+        cout << "0. 종료" << endl;
         cout << "선택: ";
 
         int choice;
@@ -78,10 +80,30 @@ int main()
             
             myWorkshop.FindRecipesByIngredient(ingredient);
                 
-        } else if (choice == 5) {
+        } else if (choice == 0)
+        {
             cout << "공방 문을 닫습니다..." << endl;
             break;
-
+            
+        } else if (choice == 5)
+        {
+            string PotionName;
+            cout << "원하는 물약의 이름: ";
+            cin.ignore(10000, '\n');
+            getline(cin, PotionName);
+            
+            myWorkshop.DispensePotion(PotionName);
+     
+            
+        
+        } else if (choice == 6)
+        {
+            string PotionName;
+            cout << "반납하는 물약 이름: ";
+            cin.ignore(10000, '\n');
+            getline(cin, PotionName);
+            
+            myWorkshop.ReturnPotion(PotionName);
         } else {
             cout << "잘못된 선택입니다. 다시 시도하세요." << endl;
         }

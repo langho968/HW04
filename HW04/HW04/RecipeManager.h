@@ -9,7 +9,7 @@ using namespace std;
 class RecipeManager
 {
 public:
-    PotionRecipe* AddRecipe(string& Name, vector<string>& Ingredients);
+    int AddRecipe(string& Name, vector<string>& Ingredients);
     const PotionRecipe* FindRecipeByName(string& Name) const;
     const vector<PotionRecipe> FindRecipesByIngredient(string& Ingredient) const;
     const vector<PotionRecipe>& GetAllRecipes() const;

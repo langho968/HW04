@@ -20,6 +20,6 @@ public:
     void displayAllRecipes() const;
     void FindRecipeByName(string& name) const;
     void FindRecipesByIngredient(string& ingredient) const;
-    bool DispensePotion(const string& PotionName);
+    void DispensePotion(string& PotionName);
     void ReturnPotion(const string& PotionName);
 };

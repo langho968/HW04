@@ -1,18 +1,20 @@
 ﻿#include "RecipeManager.h"
 
-PotionRecipe* RecipeManager::AddRecipe(string& Name, vector<string>& Ingredients)
+
+
+int RecipeManager::AddRecipe(string& Name, vector<string>& Ingredients)
 {
-    for (auto recipe : recipes)
+    for (auto& recipe : recipes)
     {
         if (recipe.GetName() == Name)
         {
-            return nullptr;
+            return -1;
         }
     }
     
     recipes.push_back(PotionRecipe(Name, Ingredients));
     
-    return &recipes.back();
+    return recipes.size()-1;
 }
 
 const PotionRecipe* RecipeManager::FindRecipeByName(string& Name) const
